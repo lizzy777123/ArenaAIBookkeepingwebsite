@@ -1,0 +1,23 @@
+.ba-container {
+  position: relative;
+  max-width: 800px;
+}
+
+.ba-img {
+  width: 100%;
+}
+
+.ba-overlay {
+  position: absolute;
+  width: 50%;
+  overflow: hidden;
+}
+
+.ba-handle {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: white;
+  cursor: ew-resize;
+}
