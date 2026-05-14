@@ -1,20 +1,1061 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thames Bookkeeping London | Certified Bookkeepers & Accountancy</title>
+    <meta name="description" content="Expert bookkeeping, VAT returns, payroll, and HMRC compliance for businesses in London. Transparent pricing and cloud accountancy solutions.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom Styling for Lilac & Purple Theme */
+        .bg-purple-primary { background-color: #581c87; } /* Tailwind purple-900 */
+        .bg-purple-accent { background-color: #7e22ce; } /* Tailwind purple-700 */
+        .bg-lilac { background-color: #f3e8ff; } /* Tailwind purple-100 */
+        .bg-lilac-dark { background-color: #e9d5ff; } /* Tailwind purple-200 */
+        .text-lilac { color: #d8b4fe; }
+        .border-lilac { border-color: #e9d5ff; }
+        
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-slate-900 flex flex-col min-h-screen selection:bg-purple-200 selection:text-purple-900">
 
-<div class="ba-container">
-  <img src="before_20260412_160808_0000.jpg" class="ba-img">
+    <!-- Top Announcement Bar -->
+    <div class="bg-black text-white text-xs md:text-sm py-2.5 px-4 sm:px-8 flex justify-between items-center border-b border-purple-900">
+        <div class="flex items-center space-x-4 mx-auto md:mx-0 text-slate-300">
+            <span class="flex items-center"><i class="fa-solid fa-location-dot text-purple-400 mr-2"></i> City of London Office: EC2N 1HN</span>
+            <span class="hidden sm:inline text-slate-600">|</span>
+            <span class="hidden sm:flex items-center"><i class="fa-solid fa-clock text-purple-400 mr-2"></i> Mon - Fri: 9:00 AM - 6:00 PM</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="tel:+442079460912" class="hover:text-purple-300 transition font-semibold flex items-center">
+                <i class="fa-solid fa-phone text-purple-400 mr-2"></i> 020 7946 0912
+            </a>
+            <a href="mailto:contact@thamesbookkeeping.co.uk" class="hover:text-purple-300 transition flex items-center">
+                <i class="fa-solid fa-envelope text-purple-400 mr-2"></i> contact@thamesbookkeeping.co.uk
+            </a>
+        </div>
+    </div>
 
-  <div class="ba-overlay">
-    <img src="after_20260412_161223_0000.jpg" class="ba-img">
-  </div>
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" onclick="navigateTo('home')" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-purple-700 flex items-center justify-center text-white shadow-md shadow-purple-700/30 group-hover:bg-purple-800 transition">
+                    <i class="fa-solid fa-book-bookmark text-xl"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-xl tracking-tight text-black block leading-none">THAMES</span>
+                    <span class="text-[10px] font-bold tracking-widest text-purple-700 uppercase block mt-1">Bookkeeping London</span>
+                </div>
+            </a>
 
-  <div class="ba-handle"></div>
-</div>
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                <a href="#home" onclick="navigateTo('home')" class="nav-link px-4 py-2 rounded-lg font-semibold text-sm transition hover:text-purple-700 text-slate-600">Home</a>
+                <a href="#services" onclick="navigateTo('services')" class="nav-link px-4 py-2 rounded-lg font-semibold text-sm transition hover:text-purple-700 text-slate-600">Services</a>
+                <a href="#about" onclick="navigateTo('about')" class="nav-link px-4 py-2 rounded-lg font-semibold text-sm transition hover:text-purple-700 text-slate-600">About Us</a>
+                <a href="#pricing" onclick="navigateTo('pricing')" class="nav-link px-4 py-2 rounded-lg font-semibold text-sm transition hover:text-purple-700 text-slate-600">Pricing</a>
+                <a href="#contact" onclick="navigateTo('contact')" class="nav-link px-4 py-2 rounded-lg font-semibold text-sm transition hover:text-purple-700 text-slate-600">Contact Us</a>
+            </nav>
 
-<script src="script.js"></script>
+            <!-- Call To Action & Mobile Toggle -->
+            <div class="flex items-center space-x-3">
+                <a href="#contact" onclick="navigateTo('contact')" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm bg-purple-700 hover:bg-purple-800 text-white shadow-lg shadow-purple-700/20 transition duration-150">
+                    Get Free Quote <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+                <button onclick="toggleMobileNav()" class="md:hidden p-2 text-slate-700 hover:text-purple-700 focus:outline-none">
+                    <i id="mobile-icon" class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" onclick="navigateTo('home'); toggleMobileNav();" class="block font-semibold text-base text-slate-800 hover:text-purple-700 py-2 border-b border-slate-100">Home</a>
+            <a href="#services" onclick="navigateTo('services'); toggleMobileNav();" class="block font-semibold text-base text-slate-800 hover:text-purple-700 py-2 border-b border-slate-100">Services</a>
+            <a href="#about" onclick="navigateTo('about'); toggleMobileNav();" class="block font-semibold text-base text-slate-800 hover:text-purple-700 py-2 border-b border-slate-100">About Us</a>
+            <a href="#pricing" onclick="navigateTo('pricing'); toggleMobileNav();" class="block font-semibold text-base text-slate-800 hover:text-purple-700 py-2 border-b border-slate-100">Pricing</a>
+            <a href="#contact" onclick="navigateTo('contact'); toggleMobileNav();" class="block font-semibold text-base text-slate-800 hover:text-purple-700 py-2">Contact Us</a>
+            <div class="pt-2">
+                <a href="#contact" onclick="navigateTo('contact'); toggleMobileNav();" class="w-full text-center block px-5 py-3 rounded-xl font-bold text-sm bg-purple-700 text-white shadow-md">
+                    Book a Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Body containing the 5 Pages -->
+    <main class="flex-grow">
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <div id="page-home" class="tab-content active">
+            <!-- Hero Banner -->
+            <section class="relative bg-gradient-to-b from-purple-900 via-purple-800 to-black text-white pt-20 pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <!-- Background decorative elements -->
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d8b4fe_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                <div class="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-purple-500/20 border border-purple-300/30 text-purple-200 text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-shield-halved text-purple-300"></i>
+                            <span>AAT Certified & HMRC Compliant Bookkeepers</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                            Flawless Bookkeeping For London's <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-purple-100 to-white">Ambitious Businesses</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-purple-100/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                            Take the stress out of accounting. From daily ledger management and VAT returns to full payroll and Making Tax Digital (MTD) compliance.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#contact" onclick="navigateTo('contact')" class="w-full sm:w-auto px-8 py-4 bg-white text-purple-900 hover:bg-purple-100 font-bold text-base rounded-xl shadow-xl transition transform active:scale-95 text-center">
+                                Claim Free Audit
+                            </a>
+                            <a href="#services" onclick="navigateTo('services')" class="w-full sm:w-auto px-8 py-4 border-2 border-purple-300/40 hover:border-purple-200 text-white font-bold text-base rounded-xl transition text-center">
+                                Explore Services
+                            </a>
+                        </div>
+                        <div class="pt-6 border-t border-purple-800/60 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-purple-200">
+                            <div class="flex items-center"><i class="fa-solid fa-circle-check text-purple-300 mr-2"></i> Fixed Monthly Fees</div>
+                            <div class="flex items-center"><i class="fa-solid fa-circle-check text-purple-300 mr-2"></i> 100% Cloud Integration</div>
+                            <div class="flex items-center"><i class="fa-solid fa-circle-check text-purple-300 mr-2"></i> Dedicated London Manager</div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Card -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none bg-white p-6 sm:p-8 rounded-3xl shadow-2xl text-slate-900 border border-slate-100">
+                            <div class="absolute -top-4 -right-4 bg-purple-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-lg flex items-center space-x-1">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span>4.9/5 from 180+ London SMEs</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-black">Calculate Your Estimate</h3>
+                            <p class="text-slate-600 text-xs mb-6">Select your company setup to view indicative pricing instantly.</p>
+                            
+                            <div class="space-y-4 mb-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Business Entity</label>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <button onclick="setCalcEntity('sole', 120)" id="btn-entity-sole" class="calc-btn py-2.5 px-2 rounded-xl border-2 border-purple-700 bg-purple-50 text-purple-900 font-bold text-xs transition">Sole Trader</button>
+                                        <button onclick="setCalcEntity('ltd', 210)" id="btn-entity-ltd" class="calc-btn py-2.5 px-2 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:border-purple-300 transition">Ltd Company</button>
+                                        <button onclick="setCalcEntity('corp', 450)" id="btn-entity-corp" class="calc-btn py-2.5 px-2 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:border-purple-300 transition">Partnership</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Monthly Transactions</label>
+                                    <select id="calc-tx" onchange="updateCalc()" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:border-purple-700 focus:outline-none">
+                                        <option value="1">0 - 50 Transactions</option>
+                                        <option value="1.5">51 - 200 Transactions</option>
+                                        <option value="2.2">201 - 500 Transactions</option>
+                                        <option value="3.5">500+ Transactions</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Includes VAT & Payroll?</label>
+                                    <div class="flex items-center space-x-4 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                                        <input type="checkbox" id="calc-vat" onchange="updateCalc()" checked class="w-5 h-5 accent-purple-700 rounded cursor-pointer">
+                                        <span class="text-sm font-semibold text-slate-800">Yes, full tax compliance</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200 flex items-center justify-between mb-6">
+                                <span class="text-xs font-bold text-purple-950 uppercase tracking-wide">Estimated Investment</span>
+                                <div class="text-right">
+                                    <span id="calc-total" class="text-3xl font-extrabold text-purple-800">£180</span>
+                                    <span class="text-xs font-semibold text-purple-700">/month</span>
+                                </div>
+                            </div>
+
+                            <a href="#contact" onclick="navigateTo('contact')" class="w-full py-4 bg-purple-700 hover:bg-purple-800 text-white font-bold text-sm rounded-xl transition flex items-center justify-center space-x-2 shadow-lg shadow-purple-700/20 block text-center">
+                                <span>Lock In This Rate</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Partners / Software Bar -->
+            <div class="bg-purple-100/60 py-10 border-b border-purple-200/60">
+                <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+                    <p class="text-xs font-extrabold uppercase tracking-widest text-purple-900">Certified Partners & Integrated Software Tiers</p>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 font-bold text-purple-950 text-lg sm:text-2xl tracking-tight">
+                        <span class="flex items-center"><i class="fa-solid fa-cloud mr-2 text-purple-700"></i> Xero Partner</span>
+                        <span class="flex items-center"><i class="fa-solid fa-book mr-2 text-purple-700"></i> QuickBooks Pro</span>
+                        <span class="flex items-center"><i class="fa-solid fa-receipt mr-2 text-purple-700"></i> Dext Expert</span>
+                        <span class="flex items-center"><i class="fa-solid fa-building-columns mr-2 text-purple-700"></i> Sage Intacct</span>
+                        <span class="flex items-center"><i class="fa-solid fa-calculator mr-2 text-purple-700"></i> FreeAgent</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Services Summary -->
+            <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-purple-700 px-3 py-1 bg-purple-100 rounded-full">Core Specialities</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">Everything You Need To Stay 100% Compliant</h2>
+                    <p class="text-slate-600 text-base">We handle the paperwork and HMRC filings so you can focus entirely on scaling your business in London.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:border-purple-300 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-700 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-black mb-3">Day-to-Day Bookkeeping</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">Complete reconciliation of your bank feeds, sales invoices, expense receipts, and supplier ledgers using automated cloud software.</p>
+                        </div>
+                        <a href="#services" onclick="navigateTo('services')" class="inline-flex items-center font-bold text-purple-700 hover:text-purple-900 transition text-sm">
+                            <span>Learn more</span> <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:border-purple-300 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-700 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-black mb-3">VAT Returns & MTD</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">Preparation and submission of monthly or quarterly VAT returns under Making Tax Digital compliance, ensuring you never face late penalties.</p>
+                        </div>
+                        <a href="#services" onclick="navigateTo('services')" class="inline-flex items-center font-bold text-purple-700 hover:text-purple-900 transition text-sm">
+                            <span>Learn more</span> <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:border-purple-300 transition duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-700 group-hover:text-white transition duration-300">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-black mb-3">Payroll & CIS Processing</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">Executive payroll management, PAYE RTI submissions, auto-enrolment workplace pensions, and Construction Industry Scheme compliance.</p>
+                        </div>
+                        <a href="#services" onclick="navigateTo('services')" class="inline-flex items-center font-bold text-purple-700 hover:text-purple-900 transition text-sm">
+                            <span>Learn more</span> <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="#services" onclick="navigateTo('services')" class="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-base bg-purple-100 text-purple-900 hover:bg-purple-200 transition shadow-sm">
+                        View All Bookkeeping Services <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- London Focus Section -->
+            <section class="bg-black text-white py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#7e22ce_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div class="space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-purple-300 px-3 py-1 bg-purple-900/50 rounded-full border border-purple-700">London Accountancy Experts</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">Serving Innovators Across Greater London</h2>
+                        <p class="text-purple-100/80 leading-relaxed text-base sm:text-lg">
+                            From bustling tech startups in Shoreditch and retail boutiques in Soho, to established consultancies in the City of London and Canary Wharf. We understand the high-speed dynamics of London's business environment.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 pt-4">
+                            <div class="border-l-4 border-purple-500 pl-4 space-y-1">
+                                <div class="text-3xl font-extrabold text-white">250+</div>
+                                <div class="text-xs text-purple-200 font-medium">London Clients Managed</div>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4 space-y-1">
+                                <div class="text-3xl font-extrabold text-white">100%</div>
+                                <div class="text-xs text-purple-200 font-medium">HMRC Filing Success</div>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4 space-y-1">
+                                <div class="text-3xl font-extrabold text-white">15 Mins</div>
+                                <div class="text-xs text-purple-200 font-medium">Average Support Response</div>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4 space-y-1">
+                                <div class="text-3xl font-extrabold text-white">£4M+</div>
+                                <div class="text-xs text-purple-200 font-medium">Annual Tax Reconciled</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-tr from-purple-900 to-purple-800 p-6 rounded-3xl border border-purple-700/50 shadow-xl space-y-3">
+                                <i class="fa-solid fa-location-arrow text-2xl text-purple-300"></i>
+                                <h4 class="font-bold text-lg text-white">City of London</h4>
+                                <p class="text-xs text-purple-200/80">Corporate ledger management, executive payroll & advisory.</p>
+                            </div>
+                            <div class="bg-gradient-to-tr from-purple-950 to-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl space-y-3">
+                                <i class="fa-solid fa-building text-2xl text-purple-300"></i>
+                                <h4 class="font-bold text-lg text-white">Canary Wharf</h4>
+                                <p class="text-xs text-purple-200/80">Financial services bookkeeping and complex VAT reconciliations.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="bg-gradient-to-tr from-purple-950 to-slate-900 p-6 rounded-3xl border border-slate-800 shadow-xl space-y-3">
+                                <i class="fa-solid fa-mug-saucer text-2xl text-purple-300"></i>
+                                <h4 class="font-bold text-lg text-white">Shoreditch & Soho</h4>
+                                <p class="text-xs text-purple-200/80">Cloud accounting setup, app integrations & e-commerce support.</p>
+                            </div>
+                            <div class="bg-gradient-to-tr from-purple-900 to-purple-800 p-6 rounded-3xl border border-purple-700/50 shadow-xl space-y-3">
+                                <i class="fa-solid fa-store text-2xl text-purple-300"></i>
+                                <h4 class="font-bold text-lg text-white">West End</h4>
+                                <p class="text-xs text-purple-200/80">Hospitality, retail tracking, daily cash & CIS schemes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-purple-700 px-3 py-1 bg-purple-100 rounded-full">Client Feedback</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">What London Business Owners Say</h2>
+                    <p class="text-slate-600 text-base">We pride ourselves on transparent communication, accuracy, and absolute dependability.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl space-y-6 flex flex-col justify-between shadow-xs">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 text-sm space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm leading-relaxed italic font-medium">
+                                "Thames Bookkeeping completely rescued our accounts after our previous accountant let us down right before our VAT return deadline. They migrated us to Xero smoothly and saved us over £3,000 in potential penalties."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-200">
+                            <div class="w-10 h-10 rounded-full bg-purple-700 text-white font-bold flex items-center justify-center text-sm">
+                                AH
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-black">Alistair Hayes</h4>
+                                <p class="text-xs text-purple-700 font-semibold">Founder, FinTech Horizon London</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="p-8 bg-purple-900 text-white border border-purple-800 rounded-3xl space-y-6 flex flex-col justify-between shadow-xl">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-400 text-sm space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-purple-100 text-sm leading-relaxed italic font-medium">
+                                "As a fast-growing restaurant group in Soho, our daily transaction volume is immense. Thames manages our entire Dext & QuickBooks workflow effortlessly. We finally have clarity on our real-time cashflow."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-purple-800">
+                            <div class="w-10 h-10 rounded-full bg-white text-purple-900 font-bold flex items-center justify-center text-sm">
+                                MP
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Maria Portolano</h4>
+                                <p class="text-xs text-purple-200 font-semibold">Director, Bella Cucina Holdings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl space-y-6 flex flex-col justify-between shadow-xs">
+                        <div class="space-y-4">
+                            <div class="flex text-amber-500 text-sm space-x-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-700 text-sm leading-relaxed italic font-medium">
+                                "The monthly management reports and transparent package pricing give us complete peace of mind. Thames Bookkeeping operates exactly like our internal finance team but at a fraction of the full-time payroll cost."
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-slate-200">
+                            <div class="w-10 h-10 rounded-full bg-purple-700 text-white font-bold flex items-center justify-center text-sm">
+                                DB
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-black">Daniel Bennett</h4>
+                                <p class="text-xs text-purple-700 font-semibold">Managing Partner, Kensal Media</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE 2: SERVICES ================= -->
+        <div id="page-services" class="tab-content py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-700 px-3 py-1 bg-purple-100 rounded-full">Complete Accountancy Support</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-black tracking-tight">Our Bookkeeping & Accounting Services</h1>
+                <p class="text-slate-600 text-lg">Tailored financial administration designed to maintain absolute compliance with HMRC while providing actionable clarity on your company growth.</p>
+            </div>
+
+            <!-- Service Details List -->
+            <div class="space-y-12">
+                <!-- Service Item 1 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-purple-100 text-purple-800 font-bold text-xs">
+                            <i class="fa-solid fa-calculator"></i><span>Ledger & Reconciliation</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">Complete Day-to-Day Bookkeeping</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            Maintaining accurate financial ledgers is the foundation of any successful business. We handle your entire receipt processing, bank feed reconciliation, sales ledger management, and supplier invoice tracking. By categorizing every single penny, we ensure your year-end tax returns are seamless.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-800 font-semibold">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Daily & Weekly Bank Reconciliations</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Accounts Payable & Receivable</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Multi-Currency Reconciliation</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Expense & Receipt Digital Capture</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-4 bg-purple-900 p-8 rounded-2xl text-white flex flex-col justify-center space-y-4 shadow-xl">
+                        <h3 class="font-bold text-xl">Cloud Tools We Use</h3>
+                        <p class="text-xs text-purple-200">We utilize AI-assisted OCR scanning tools like Dext and AutoEntry to eliminate manual data entry entirely.</p>
+                        <a href="#contact" onclick="navigateTo('contact')" class="px-5 py-3 bg-white text-purple-900 font-bold text-xs rounded-xl shadow-md text-center hover:bg-purple-100 transition">Get Bookkeeping Quote</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 2 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-purple-100 text-purple-800 font-bold text-xs">
+                            <i class="fa-solid fa-file-invoice-dollar"></i><span>HMRC Compliance</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">VAT Returns & Making Tax Digital (MTD)</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            Navigating UK Value Added Tax rules can be complex and costly if handled incorrectly. We determine the optimal VAT scheme for your business (Standard, Cash Accounting, or Flat Rate), prepare your quarterly returns, and submit them directly to HMRC via MTD-compatible software.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-800 font-semibold">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> VAT Registration & Deregistration</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> MTD Compliant Bridging & Filings</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> EU & International VAT Treatment</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> HMRC Inquiry Representation</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-4 bg-purple-900 p-8 rounded-2xl text-white flex flex-col justify-center space-y-4 shadow-xl">
+                        <h3 class="font-bold text-xl">Never Miss a Filing</h3>
+                        <p class="text-xs text-purple-200">We track your VAT periods and send you proactive notifications 30 days before your tax liabilities are due.</p>
+                        <a href="#contact" onclick="navigateTo('contact')" class="px-5 py-3 bg-white text-purple-900 font-bold text-xs rounded-xl shadow-md text-center hover:bg-purple-100 transition">Request VAT Review</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 3 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-purple-100 text-purple-800 font-bold text-xs">
+                            <i class="fa-solid fa-user-group"></i><span>Staff Administration</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">Executive Payroll & Workplace Pensions</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            Ensure your staff and directors are paid accurately and on time while maintaining strict compliance with PAYE Real Time Information (RTI) regulations. We also administer mandatory auto-enrolment workplace pension schemes from start to finish.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-800 font-semibold">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Weekly, Fortnightly & Monthly Payroll</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Payslip Generation & Employee Portal</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> NEST & Smart Pension Auto-Enrolment</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> P45, P60 & P11D Preparation</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-4 bg-purple-900 p-8 rounded-2xl text-white flex flex-col justify-center space-y-4 shadow-xl">
+                        <h3 class="font-bold text-xl">CIS Scheme Support</h3>
+                        <p class="text-xs text-purple-200">Are you in construction? We handle monthly CIS verifications, deductions, and statements for contractors and subcontractors.</p>
+                        <a href="#contact" onclick="navigateTo('contact')" class="px-5 py-3 bg-white text-purple-900 font-bold text-xs rounded-xl shadow-md text-center hover:bg-purple-100 transition">Outsource Payroll</a>
+                    </div>
+                </div>
+
+                <!-- Service Item 4 -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-purple-100 text-purple-800 font-bold text-xs">
+                            <i class="fa-solid fa-chart-line"></i><span>Financial Strategy</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-black tracking-tight">Management Accounts & Cashflow Advisory</h2>
+                        <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                            Don't wait until the end of the fiscal year to understand how your business is performing. We provide custom monthly or quarterly management dashboards detailing profit and loss, balance sheets, aged debtors, and operational cashflow forecasts.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-800 font-semibold">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Custom Profit & Loss Analytics</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Budget vs Actual Variance Tracking</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> 12-Month Cashflow Runway Modeling</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Pre-Audit Preparation for Limited Cos</li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-4 bg-purple-900 p-8 rounded-2xl text-white flex flex-col justify-center space-y-4 shadow-xl">
+                        <h3 class="font-bold text-xl">Cloud Accountancy Setup</h3>
+                        <p class="text-xs text-purple-200">Looking to migrate from spreadsheets or legacy desktop software? We provide full onboarding onto Xero or QuickBooks.</p>
+                        <a href="#contact" onclick="navigateTo('contact')" class="px-5 py-3 bg-white text-purple-900 font-bold text-xs rounded-xl shadow-md text-center hover:bg-purple-100 transition">Book Strategy Call</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE 3: ABOUT US ================= -->
+        <div id="page-about" class="tab-content py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-700 px-3 py-1 bg-purple-100 rounded-full">Our Story & Standards</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-black tracking-tight">London's Trusted Accountancy Partner</h1>
+                <p class="text-slate-600 text-lg">Founded in the heart of London, Thames Bookkeeping was built on a singular vision: to provide premium, uncompromising financial accuracy for modern growing enterprises.</p>
+            </div>
+
+            <!-- Story Split -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-black">Excellence, Transparency, and Absolute Dependability</h2>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Accounting in London is not just about logging numbers; it's about strategic compliance in one of the world's most dynamic economic capitals. Our founders saw that small and medium-sized businesses were routinely underserved by traditional, slow-moving accounting firms charging opaque hourly rates.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        By combining AAT-certified expertise with powerful cloud automation tools, we deliver real-time financial clarity. Whether you are seeking venture capital investment or simply trying to optimize your tax position, our team operates as an extension of your company.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-purple-700 mb-2"></i>
+                            <h4 class="font-bold text-slate-900">AAT Certified</h4>
+                            <p class="text-xs text-slate-600 mt-1">Regulated accounting professionals adhering to high ethical codes.</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 rounded-2xl border border-purple-200">
+                            <i class="fa-solid fa-lock text-2xl text-purple-700 mb-2"></i>
+                            <h4 class="font-bold text-slate-900">ICO Registered</h4>
+                            <p class="text-xs text-slate-600 mt-1">Strict adherence to data protection and financial confidentiality.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-900 to-black p-8 sm:p-12 rounded-3xl text-white space-y-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-purple-200">Why London Businesses Choose Us</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-700/50 flex items-center justify-center text-white shrink-0 font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Fixed Monthly Billing</h4>
+                                <p class="text-xs text-purple-200/80 mt-1">No surprise invoices or hourly billing traps. You know exactly what you invest every month.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-700/50 flex items-center justify-center text-white shrink-0 font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Proactive Tax Planning</h4>
+                                <p class="text-xs text-purple-200/80 mt-1">We don't just record the past; we advise you on optimal dividend strategies and capital allowances.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-700/50 flex items-center justify-center text-white shrink-0 font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">London-Based Team</h4>
+                                <p class="text-xs text-purple-200/80 mt-1">We never outsource your sensitive financial data overseas. All operations are managed from our City of London office.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet The Team -->
+            <div class="space-y-12 pt-12 border-t border-slate-200">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <h2 class="text-3xl font-extrabold text-black">Meet Our Certified Leadership Team</h2>
+                    <p class="text-slate-600 text-sm">Dedicated accounting professionals committed to your financial success.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Team 1 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center space-y-4 hover:border-purple-300 transition shadow-xs">
+                        <div class="w-28 h-28 rounded-full bg-purple-700 text-white font-extrabold text-3xl flex items-center justify-center mx-auto shadow-md">
+                            ER
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-black">Edward Ricketts</h3>
+                            <p class="text-xs font-semibold text-purple-700">Managing Director • MAAT</p>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">15+ years experience advising London limited companies and corporate structuring.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team 2 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center space-y-4 hover:border-purple-300 transition shadow-xs">
+                        <div class="w-28 h-28 rounded-full bg-purple-800 text-white font-extrabold text-3xl flex items-center justify-center mx-auto shadow-md">
+                            CS
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-black">Claire Sinclair</h3>
+                            <p class="text-xs font-semibold text-purple-700">Head of Bookkeeping • Xero Certified</p>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Specialist in digital cloud migrations, Dext workflows, and e-commerce reconciliations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team 3 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center space-y-4 hover:border-purple-300 transition shadow-xs">
+                        <div class="w-28 h-28 rounded-full bg-purple-900 text-white font-extrabold text-3xl flex items-center justify-center mx-auto shadow-md">
+                            MW
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-black">Marcus Walker</h3>
+                            <p class="text-xs font-semibold text-purple-700">Senior Payroll & CIS Manager</p>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Expert in complex PAYE RTI submissions, workplace pensions, and construction schemes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Team 4 -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center space-y-4 hover:border-purple-300 transition shadow-xs">
+                        <div class="w-28 h-28 rounded-full bg-black text-purple-200 font-extrabold text-3xl flex items-center justify-center mx-auto shadow-md">
+                            NP
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-black">Natasha Patel</h3>
+                            <p class="text-xs font-semibold text-purple-700">VAT Specialist • ATT</p>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">Making Tax Digital advisor ensuring flawless quarterly VAT returns and HMRC representation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE 4: PRICING ================= -->
+        <div id="page-pricing" class="tab-content py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-700 px-3 py-1 bg-purple-100 rounded-full">Transparent Investments</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-black tracking-tight">Fixed Monthly Packages</h1>
+                <p class="text-slate-600 text-lg">No hidden fees or unexpected invoices. Select the package that aligns perfectly with your business scale and transaction volume.</p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Tier 1 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-md flex flex-col justify-between hover:border-purple-300 transition space-y-8">
+                    <div class="space-y-6">
+                        <div>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-bold uppercase">Sole Trader / Starter</span>
+                            <h2 class="text-2xl font-extrabold text-black mt-3">Essential Ledger</h2>
+                            <p class="text-xs text-slate-500 mt-1">Perfect for solo contractors, freelancers, and growing sole traders.</p>
+                        </div>
+                        <div class="text-4xl font-extrabold text-black">
+                            £120 <span class="text-sm font-normal text-slate-500">/ month + VAT</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 font-medium border-t border-slate-100 pt-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Up to 50 Transactions/mo</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Dedicated Cloud Software (Xero)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Receipt Capture App Included</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Annual Self-Assessment Prep</li>
+                            <li class="flex items-center text-slate-400 line-through"><i class="fa-solid fa-xmark mr-2"></i> VAT Return Submissions</li>
+                            <li class="flex items-center text-slate-400 line-through"><i class="fa-solid fa-xmark mr-2"></i> Payroll Processing</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="navigateTo('contact')" class="w-full py-4 bg-purple-50 hover:bg-purple-100 font-bold text-purple-900 text-sm rounded-xl transition text-center block border border-purple-200">
+                        Choose Essential
+                    </a>
+                </div>
+
+                <!-- Tier 2 (Featured) -->
+                <div class="bg-purple-900 text-white border-2 border-purple-700 rounded-3xl p-8 shadow-2xl flex flex-col justify-between relative space-y-8 transform md:-translate-y-4">
+                    <div class="absolute -top-4 right-8 bg-purple-200 text-purple-950 font-extrabold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow">
+                        Most Popular for SMEs
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <span class="px-3 py-1 bg-purple-800 text-purple-200 rounded-full text-xs font-bold uppercase border border-purple-700">Limited Companies</span>
+                            <h2 class="text-2xl font-extrabold text-white mt-3">Growth Compliance</h2>
+                            <p class="text-xs text-purple-200 mt-1">Designed for active London limited companies requiring full HMRC compliance.</p>
+                        </div>
+                        <div class="text-4xl font-extrabold text-white">
+                            £240 <span class="text-sm font-normal text-purple-300">/ month + VAT</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-purple-100 font-medium border-t border-purple-800 pt-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-300 mr-2"></i> Up to 250 Transactions/mo</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-300 mr-2"></i> Xero or QuickBooks Included</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-300 mr-2"></i> Quarterly VAT Returns (MTD)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-300 mr-2"></i> Payroll for up to 5 Employees</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-300 mr-2"></i> Monthly Management Dashboard</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-300 mr-2"></i> Priority London Phone Support</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="navigateTo('contact')" class="w-full py-4 bg-white hover:bg-purple-100 font-bold text-purple-950 text-sm rounded-xl shadow-lg transition text-center block">
+                        Choose Growth Plan
+                    </a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-md flex flex-col justify-between hover:border-purple-300 transition space-y-8">
+                    <div class="space-y-6">
+                        <div>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-bold uppercase">Corporate & Scaling</span>
+                            <h2 class="text-2xl font-extrabold text-black mt-3">Corporate Finance</h2>
+                            <p class="text-xs text-slate-500 mt-1">Complete outsourced financial operations for established London companies.</p>
+                        </div>
+                        <div class="text-4xl font-extrabold text-black">
+                            £490 <span class="text-sm font-normal text-slate-500">/ month + VAT</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 font-medium border-t border-slate-100 pt-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Unlimited Monthly Transactions</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Multi-Currency Reconciliations</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Complex VAT & CIS Processing</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Full Payroll & Pensions (Up to 25 staff)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Quarterly Cashflow Runway Models</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-purple-700 mr-2"></i> Dedicated Client Director</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" onclick="navigateTo('contact')" class="w-full py-4 bg-purple-50 hover:bg-purple-100 font-bold text-purple-900 text-sm rounded-xl transition text-center block border border-purple-200">
+                        Choose Corporate
+                    </a>
+                </div>
+            </div>
+
+            <!-- Custom Add-ons Banner -->
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="space-y-2">
+                    <h3 class="text-2xl font-extrabold text-black">Need a bespoke accounting package?</h3>
+                    <p class="text-slate-600 text-sm">We provide tailored add-ons including R&D tax credit calculations, catch-up bookkeeping, and legacy software cleanups.</p>
+                </div>
+                <a href="#contact" onclick="navigateTo('contact')" class="px-8 py-4 bg-purple-700 hover:bg-purple-800 text-white font-bold text-sm rounded-xl shadow-lg transition shrink-0">
+                    Request Custom Quote
+                </a>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE 5: CONTACT US ================= -->
+        <div id="page-contact" class="tab-content py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-700 px-3 py-1 bg-purple-100 rounded-full">Initiate Dialogue</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-black tracking-tight">Contact Thames Bookkeeping</h1>
+                <p class="text-slate-600 text-lg">Book a free, no-obligation consultation with our London accounting team or visit our central office.</p>
+            </div>
+
+            <!-- Contact Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Form -->
+                <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-8 sm:p-10 shadow-xl">
+                    <h2 class="text-2xl font-bold text-black mb-6">Send Us A Message</h2>
+                    
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Full Name *</label>
+                                <input type="text" required placeholder="John Smith" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-purple-700 font-medium">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Company Name *</label>
+                                <input type="text" required placeholder="Apex Global Ltd" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-purple-700 font-medium">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address *</label>
+                                <input type="email" required placeholder="john@company.co.uk" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-purple-700 font-medium">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number</label>
+                                <input type="tel" placeholder="07700 900077" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-purple-700 font-medium">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Service Required</label>
+                            <select class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-purple-700 font-medium">
+                                <option>Day-to-Day Bookkeeping & Bank Feeds</option>
+                                <option>VAT Returns & MTD Compliance</option>
+                                <option>Payroll & Auto-Enrolment Pensions</option>
+                                <option>Full Outsourced Accounting Package</option>
+                                <option>Cloud Accounting Setup / Migration</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">How can we help your London business? *</label>
+                            <textarea rows="4" required placeholder="Tell us about your current transaction volume, software used, and any looming HMRC deadlines..." class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-purple-700 font-medium"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-purple-700 hover:bg-purple-800 text-white font-bold text-base rounded-xl shadow-lg shadow-purple-700/20 transition cursor-pointer">
+                            Submit Consultation Request
+                        </button>
+                    </form>
+
+                    <!-- Success Alert -->
+                    <div id="form-success" class="hidden mt-6 p-4 bg-purple-100 border border-purple-300 rounded-2xl text-purple-900 text-sm font-semibold flex items-center space-x-3">
+                        <i class="fa-solid fa-circle-check text-purple-700 text-xl"></i>
+                        <span>Thank you! Your inquiry has been received. A London accounting manager will contact you within 2 working hours.</span>
+                    </div>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-black text-white p-8 sm:p-10 rounded-3xl space-y-6 shadow-2xl border border-purple-900/60">
+                        <h3 class="text-2xl font-bold text-white">Office Location & Contact Details</h3>
+                        <p class="text-purple-200 text-sm leading-relaxed">
+                            Our primary administrative office is situated right in the City of London, making us easily accessible for face-to-face consultations.
+                        </p>
+                        <div class="space-y-4 pt-2 text-sm font-medium">
+                            <div class="flex items-start space-x-4">
+                                <i class="fa-solid fa-location-dot text-purple-400 mt-1 text-lg"></i>
+                                <div>
+                                    <div class="font-bold text-white">Thames Bookkeeping London</div>
+                                    <div class="text-purple-200">25 Old Broad St, City of London</div>
+                                    <div class="text-purple-200">London, EC2N 1HN</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <i class="fa-solid fa-phone text-purple-400 text-lg"></i>
+                                <div>
+                                    <div class="font-bold text-white">Phone Support</div>
+                                    <div class="text-purple-200">020 7946 0912</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <i class="fa-solid fa-envelope text-purple-400 text-lg"></i>
+                                <div>
+                                    <div class="font-bold text-white">Email Inquiries</div>
+                                    <div class="text-purple-200">contact@thamesbookkeeping.co.uk</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <i class="fa-solid fa-clock text-purple-400 text-lg"></i>
+                                <div>
+                                    <div class="font-bold text-white">Working Hours</div>
+                                    <div class="text-purple-200">Monday - Friday: 9:00 AM - 6:00 PM</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-purple-900/60 flex items-center justify-between">
+                            <span class="text-xs text-purple-300 font-semibold">Nearest Stations: Bank, Liverpool Street</span>
+                            <span class="px-3 py-1 bg-purple-700 text-white font-bold text-[10px] rounded">HMRC Registered</span>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Accordion -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 space-y-6">
+                        <h3 class="text-xl font-bold text-black">Frequently Asked Questions</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="border-b border-slate-200 pb-4">
+                                <h4 class="font-bold text-black text-sm mb-1">How quickly can you switch us from our current accountant?</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">We manage the professional clearance letter entirely. The handover process takes less than 48 hours with zero disruption to your business.</p>
+                            </div>
+                            <div class="border-b border-slate-200 pb-4">
+                                <h4 class="font-bold text-black text-sm mb-1">Do I need to be based in London?</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">While our office and core expertise are in London, our 100% cloud-based infrastructure allows us to serve limited companies across the entire UK.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black text-sm mb-1">Are your prices truly fixed?</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Yes. Once agreed, your monthly package fee remains strictly fixed unless your business transaction volume scales into a higher tier.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white border-t border-purple-900 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-purple-950">
+            <!-- Brand -->
+            <div class="lg:col-span-2 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-700 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-book-bookmark text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-xl tracking-tight text-white block leading-none">THAMES</span>
+                        <span class="text-[10px] font-bold tracking-widest text-purple-300 uppercase block mt-1">Bookkeeping London</span>
+                    </div>
+                </div>
+                <p class="text-purple-100/70 text-xs leading-relaxed max-w-sm">
+                    Premium London accountancy and bookkeeping support. Expert management of VAT returns, payroll, CIS schemes, and Making Tax Digital compliance for UK small and medium enterprises.
+                </p>
+                <div class="flex space-x-4 pt-2">
+                    <a href="#" class="w-8 h-8 rounded-lg bg-purple-900 flex items-center justify-center hover:bg-purple-700 text-purple-200 transition"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-lg bg-purple-900 flex items-center justify-center hover:bg-purple-700 text-purple-200 transition"><i class="fa-brands fa-twitter text-xs"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-lg bg-purple-900 flex items-center justify-center hover:bg-purple-700 text-purple-200 transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold text-sm text-purple-200 mb-4 uppercase tracking-wider">Navigation</h4>
+                <ul class="space-y-2 text-xs text-purple-100/80 font-medium">
+                    <li><a href="#home" onclick="navigateTo('home')" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#services" onclick="navigateTo('services')" class="hover:text-white transition">Bookkeeping Services</a></li>
+                    <li><a href="#about" onclick="navigateTo('about')" class="hover:text-white transition">About Our Firm</a></li>
+                    <li><a href="#pricing" onclick="navigateTo('pricing')" class="hover:text-white transition">Monthly Packages</a></li>
+                    <li><a href="#contact" onclick="navigateTo('contact')" class="hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Links -->
+            <div>
+                <h4 class="font-bold text-sm text-purple-200 mb-4 uppercase tracking-wider">Specialities</h4>
+                <ul class="space-y-2 text-xs text-purple-100/80 font-medium">
+                    <li><a href="#services" onclick="navigateTo('services')" class="hover:text-white transition">Bank Reconciliation</a></li>
+                    <li><a href="#services" onclick="navigateTo('services')" class="hover:text-white transition">VAT Returns & MTD</a></li>
+                    <li><a href="#services" onclick="navigateTo('services')" class="hover:text-white transition">Payroll & Pensions</a></li>
+                    <li><a href="#services" onclick="navigateTo('services')" class="hover:text-white transition">CIS Returns</a></li>
+                    <li><a href="#services" onclick="navigateTo('services')" class="hover:text-white transition">Xero Migration</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal / Regs -->
+            <div>
+                <h4 class="font-bold text-sm text-purple-200 mb-4 uppercase tracking-wider">Compliance</h4>
+                <ul class="space-y-2 text-xs text-purple-100/80 font-medium">
+                    <li><span class="text-purple-300">AAT Practice No:</span> 482910</li>
+                    <li><span class="text-purple-300">ICO Reg No:</span> ZA839201</li>
+                    <li><span class="text-purple-300">HMRC Agent Reg:</span> TX9201</li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Engagement</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-purple-200/60 gap-4">
+            <div>© 2026 Thames Bookkeeping London Ltd. All rights reserved. Registered in England & Wales.</div>
+            <div>Designed for absolute financial precision.</div>
+        </div>
+    </footer>
+
+    <!-- App JavaScript Logic -->
+    <script>
+        // Interactive 5-Page Routing Architecture
+        function navigateTo(pageId) {
+            // Update URL hash
+            window.location.hash = pageId;
+            
+            // Hide all tab contents
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show target page
+            const target = document.getElementById(`page-${pageId}`);
+            if (target) {
+                target.classList.add('active');
+            } else {
+                document.getElementById('page-home').classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update Active Nav Link Styling
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.className = "nav-link px-4 py-2 rounded-lg font-bold text-sm transition bg-purple-100 text-purple-900";
+                } else {
+                    link.className = "nav-link px-4 py-2 rounded-lg font-semibold text-sm transition hover:text-purple-700 text-slate-600";
+                }
+            });
+        }
+
+        // Handle initial hash on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (['home', 'services', 'about', 'pricing', 'contact'].includes(hash)) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+        });
+
+        // Mobile Nav Toggle
+        function toggleMobileNav() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = "fa-solid fa-bars text-2xl";
+            } else {
+                icon.className = "fa-solid fa-xmark text-2xl";
+            }
+        }
+
+        // Live Investment Calculator Logic
+        let calcBase = 120;
+        function setCalcEntity(entity, basePrice) {
+            calcBase = basePrice;
+            const btns = ['sole', 'ltd', 'corp'];
+            btns.forEach(b => {
+                const button = document.getElementById(`btn-entity-${b}`);
+                if (b === entity) {
+                    button.className = "calc-btn py-2.5 px-2 rounded-xl border-2 border-purple-700 bg-purple-50 text-purple-900 font-bold text-xs transition";
+                } else {
+                    button.className = "calc-btn py-2.5 px-2 rounded-xl border border-slate-200 text-slate-700 font-bold text-xs hover:border-purple-300 transition";
+                }
+            });
+            updateCalc();
+        }
+
+        function updateCalc() {
+            const multiplier = parseFloat(document.getElementById('calc-tx').value);
+            const includesVat = document.getElementById('calc-vat').checked;
+            
+            let total = calcBase * multiplier;
+            if (includesVat) total += 60; // VAT & Payroll surcharge
+
+            document.getElementById('calc-total').innerText = `£${Math.round(total)}`;
+        }
+
+        // Contact Form Submission Handler
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            document.getElementById('form-success').classList.remove('hidden');
+            event.target.reset();
+            // Scroll to success banner
+            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
 </body>
 </html>
